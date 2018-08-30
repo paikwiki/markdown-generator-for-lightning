@@ -1,0 +1,29 @@
+{
+  "name": "make-file-with-textarea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "cp -r statics/ docs/ && ./node_modules/.bin/babel src --out-dir docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paikwiki/make-file-with-textarea.git"
+  },
+  "author": "",
+  "license": "GPL",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.3",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "bugs": {
+    "url": "https://github.com/paikwiki/make-file-with-textarea/issues"
+  },
+  "homepage": "https://github.com/paikwiki/make-file-with-textarea#readme"
+}
