@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "build": "cp -r statics/ docs/ && ./node_modules/.bin/babel src --out-dir docs",
+    "build": "cp -r statics/ docs/ && browserify src/app.js -p esmify > src/bundle.js && ./node_modules/.bin/babel src/bundle.js --out-file docs/app.js && rm src/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +18,11 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.4.3",
+    "browserify": "^16.2.3",
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "esmify": "^2.1.1"
   },
   "bugs": {
     "url": "https://github.com/paikwiki/make-file-with-textarea/issues"
