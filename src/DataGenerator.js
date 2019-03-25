@@ -1,9 +1,16 @@
+import getPaddedNumber from './GetPaddedNumber';
+
+// Todo: 여기서 한번 불러줘야만 class 내부에서 쓸 수 있다.
+// 알수 없는 현상!
+getPaddedNumber(0, '0');
+
 class DataGenerator {
   constructor(data) {
     this.data = data;
     this.idx = 1;
     this.folderOrFilename = '';
     this.captionIngredients = {};
+    this.getPaddedNumber = getPaddedNumber;
   }
 
   getPaddedIndex() {
@@ -25,13 +32,13 @@ class DataGenerator {
   }
 
   getImagePath() {
-    const paddedIndex = this.getPaddedIndex();
+    const paddedIndex = this.getPaddedNumber(this.idx, '000');
     const subfolder = `${this.folderOrFilename}s`;
     return `/assets/images/${subfolder}/${this.folderOrFilename}${paddedIndex}.jpg`;
   }
 
   getThumbPath() {
-    const paddedIndex = this.getPaddedIndex();
+    const paddedIndex = this.getPaddedNumber(this.idx, '000');
     const subfolder = `${this.folderOrFilename}s`;
     return `/assets/images/${subfolder}/thumbs/${this.folderOrFilename}${paddedIndex}.jpg`;
   }
@@ -75,6 +82,5 @@ class DataGenerator {
     return markdownDataObjectArray;
   }
 }
-
 
 export default DataGenerator;

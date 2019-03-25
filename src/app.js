@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { download } from './Util';
+import downloader from './Downloader';
 import sampleData from './sampleData';
 import DataGenerator from './DataGenerator';
 
@@ -88,7 +88,7 @@ inputBtn.addEventListener('click', () => {
 
       const title = t.title.toLowerCase().replace(/[^a-z\s]/g, '').replace(/\s/g, '-');
 
-      download(str, `${year}-${month}-${day}-${title}.md`, 'text');
+      downloader(str, `${year}-${month}-${day}-${title}.md`, 'text');
     } else {
       clearInterval(downloadInterval);
       alert('모든 파일을 생성했습니다.');

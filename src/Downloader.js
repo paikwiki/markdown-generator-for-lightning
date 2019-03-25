@@ -1,6 +1,6 @@
 // Function to download data to a file
 // https://stackoverflow.com/a/30832210/9908741
-const download = (data, filename, type) => {
+const Downloader = (data, filename, type) => {
   const file = new Blob([data], { type });
   if (window.navigator.msSaveOrOpenBlob) { // IE10+
     window.navigator.msSaveOrOpenBlob(file, filename);
@@ -18,4 +18,4 @@ const download = (data, filename, type) => {
   }
 };
 
-export { download };
+export default Downloader;
